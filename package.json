@@ -1,0 +1,19 @@
+{
+  "name": "usa_states_map_server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "sever.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "knex": "^2.1.0",
+    "nodemon": "^2.0.16",
+    "pg": "^8.7.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
