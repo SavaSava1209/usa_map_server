@@ -14,17 +14,13 @@ app.use(express.json())
 app.use(cors());
 
 app.get('/:state', (req, res) => {
-    const {state} = req.params
-    return 
+    const { state } = req.params     
     return db('usa_maps').where('state', '=', state.toLowerCase()).returning('*')
-            .then(data => res.json(data))
+            .then(data => res.status(200).json({lat: data[0].latitude, lng:data[0].longtitude}))
             .catch(console.log)
 })
 
-
-
-
-app.listen(3010, ()=> {
+app.listen(3010, () => {
     console.log('port is working on env')
 })
 
