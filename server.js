@@ -20,9 +20,8 @@ app.use(cors());
 
 app.get('/:state', (req, res) => {
     const { state } = req.params  
-    console.log(state)   
     return db("usa_map").select('*').from('location').where('state', '=', state.toLowerCase()).returning('*')
-            .then(data => res.status(200).json({lat: data[0].latitude, lng: data[0].longtitude}))
+            .then(data => res.status(200).json(data) )
             .catch(console.log)
 })
 
