@@ -20,8 +20,8 @@ app.use(cors());
 app.get('/', (req, res) => res.send('working'))
 app.get('/filterState/:input', (req, res) => {
     const { input } = req.params
-    console.log(input.charAt(0).toLowerCase() + input.slice(1))
-    return db("usa-state-map").select('state').from('location').where('state', 'like', `${input.charAt(0).toLowerCase() + input.slice(1)}%` ).then(data => res.status(200).json(data))
+    console.log(input.charAt(0).toUpperCase() + input.slice(1))
+    return db("usa-state-map").select('state').from('location').where('state', 'like', `${input.charAt(0).toUpperCase() + input.slice(1)}%` ).then(data => res.status(200).json(data))
 })
 app.get('/:state', (req, res) => {
     const { state } = req.params        
